@@ -1,0 +1,80 @@
+/* 
+    Document   : estilo
+    Created on : 08/04/2013, 08:19:58
+    Author     : Danilo
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { display: block; }
+body { font-family: 'Ubuntu', sans-serif; }
+footer { font-size: 11px; }
+
+.topo { height: 120px; background: #fcfcfc;}
+.menu {min-height: 30px; position: relative; margin-bottom: 10px;}
+.logo_empresa {width: 200px; height: 70px; margin: 20px 0 0 20px; background: #FFF url("../img/gassma-logo.png") no-repeat; float: left; 	-webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px;}
+
+.area_user {margin: 40px 0 0 130px;}
+.user {border-radius: 0!important}
+.box_user {border: 1px solid #000!important; min-width: 200px!important; max-height: 30px!important }
+.boxer {padding: 5px; margin: 5px 0 5px 0;}
+.events {min-height: 180px!important;}
+
+.titulo {border-left: 5px solid #002a80}
+
+.red {border-top: 5px solid red; }
+.yellow {border-top: 5px solid yellow;}
+.blue {border-top: 5px solid blue;}
+.green {border-top: 5px solid greenyellow;}
+
+.spacer-top {margin-top: 20%;}
+.login-box {background: #000; padding: 10px; height: 250px!important; color:#FFF!important}
+.content-blue {background: #1293CA!important; height: 250px!important}
+
+/* NAV RESPONSIVA */
+
+.nav a, .brand{color: #fff!important; text-shadow:none!important;}
+.caret{border-bottom-color: #FFF!important; border-top-color: #FFF!important;}
+.dropdown-menu a {color: #000!important}
+.navbar {border-top: 3px solid #002a80; border-bottom: 2px solid #D9D9D9!important}
+.navbar-inner { background: #1293CA!important; border: 0; border-radius: 0; box-shadow: none;}
+.dropdown {color: transparent!important}
+
+.ul-links {list-style: none;}
+
+/* FORMS */
+
+/*input[type="text"] { border-radius: 0!important }
+input[type="password"] { border-radius: 0!important }
+select { border-radius: 0!important }
+textarea { border-radius: 0!important }
+*/
+/* BOTÕES */
+/*
+.btn {text-decoration: none; text-shadow: 0 1px 0 #fff; color: #444; line-height: 17px; height: 18px!important; display: block; float: left; margin: 5px; padding: 5px 6px 4px 6px; background: #F3F3F3; border: solid 1px #D9D9D9; border-radius: 0!important height: 29px !important; cursor: pointer;}
+headerAcao {margin: 2em 0 2em 0;}
+ul li.formAcao {margin: 10px 0 0 0; list-style: none;}
+formAcao.label {float: left; text-align: right; font-size: 11px; width: 70px; margin: 5px 5px 0 0;}
+legend {font-weight: bold; margin: 0 0 0 1em; padding: 1em}
+fieldset {background: #FFF}
+*/
+/*CEHCKBOX CLASS*/
+.checkbox_class li,
+.checkbox_class ul li {
+  margin-bottom: 5px;
+  padding-top: 2px;
+  position: relative;
+}
+
+.checkbox_class input,
+.checkbox_class ul input {
+  display: inline;
+  margin: 0 5px 0 -21px;
+  position: absolute;
+  top: 2px;
+}
+ 
+.checkbox_class ul {
+  margin: 5px 0 0 20px;
+  padding: 2px;
+}

@@ -1,0 +1,90 @@
+/* RESET */
+* {background:none; margin:0; padding:0}
+html{	background:url('../img/background_interno.png') no-repeat center center fixed; 
+ -webkit-background-size: 100% auto;
+  -moz-background-size: 100% auto;
+  background-size: 100% auto;}
+
+/* TIPOGRAFIA */
+body {font-family: verdana, arial; font-size: 12px;}
+h1 {font-size: 14px; padding: 0 0 0 10px;}
+.titPage {margin: 5px 0 0 20px; font-size: 16px; width: 400px; text-transform: uppercase}
+.boldFont {font-weight: bold;}
+
+/* ALINHAMENTO */
+
+#topo {width: 100%; min-width: 960px; height: 80px; background: #ECEDF2;}
+#menu {width: 100%; min-width: 960px; height: 40px; position: relative; margin-bottom: 10px;}
+#logo_empresa {width: 200px; height: 70px; margin: 5px 0 0 5px; background: #FFF url("../img/gassma-logo.png") no-repeat; float: left; 	-webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px;}
+#perfil {width: 10%; height: 50px; margin: 5px 0 0 0; background: #eee; float: right; padding: 10px; font-size: 11px}
+#contain {width: 99%; min-width: 960px; margin: 40px 0 0 0; padding: 0 0 0 1em;}
+#topBar {min-width: 960px; border-left: 10px solid #1e3956; padding: 5px; margin-bottom: 30px;}
+#opcoes {width: 200px; float:right}
+fieldset {padding: 5px; border: 1px solid #b9bdc1}
+fieldset a {margin: 10px; color:#1e3956; font-size:11px; text-decoration: none}
+fieldset a:hover {text-decoration: underline}
+
+
+/* TABELA */
+
+#tablewrapper {width: 100%; min-width: 960px; margin:0 auto}
+#tableheader {height:0px;}
+#tablefooter {height:15px; margin-top:20px}
+.tinytable {width:100%; margin-top:10px; border-left:1px solid #c6d5e1; border-top:1px solid #c6d5e1; border-bottom:none; background: #FFF}
+.tinytable th {background:#1D3955; text-align:left; color:#cfdce7; border:1px solid #fff; border-right:none}
+.tinytable a{color:#cfdce7; text-decoration: none;}
+.tinytable a:hover{color:#cfdce7; text-decoration: underline}
+.tinytable th h3 {font-size:12px; padding:6px 8px 8px}
+.tinytable td {font-size:12px; padding:4px 6px 6px; border-bottom:1px solid #c6d5e1; border-right:1px solid #c6d5e1}
+.tinytable td a {font-size:12px; color:#000}
+.tinytable .head:hover, .tinytable .desc:hover, .tinytable .asc:hover {color:#fff}
+.tinytable tfoot {background:#fff; font-weight:bold}
+.tinytable tfoot td {padding:6px 8px 8px}
+table.tinytable tbody tr:nth-child(odd){ background-color: #F3F3F3;}
+table.tinytable tbody tr:hover {background-color: #d8d8d8;}
+ 
+/* FORMULARIO */
+
+.headerAcao {margin: 2em 0 2em 0;}
+ul li.formAcao {margin: 10px 0 0 0; list-style: none;}
+formAcao.label {float: left; text-align: right; font-size: 11px; width: 70px; margin: 5px 5px 0 0;}
+legend {font-weight: bold; margin: 0 0 0 1em; padding: 1em}
+fieldset {background: #FFF}
+
+.input{font-family: Arial, Verdana; font-size: 15px; padding: 5px; border: 1px solid #b9bdc1; color: #797979;}
+.inputBig{font-family: Arial, Verdana; font-size: 15px; width: 300px; padding: 5px; border: 1px solid #b9bdc1; color: #797979;}
+input[type="checkbox"] {border: none;}
+.btn {text-decoration: none; text-shadow: 0 1px 0 #fff; font: bold 11px Helvetica, Arial, sans-serif; color: #444; line-height: 17px; height: 18px; display: block; float: left; margin: 5px; padding: 5px 6px 4px 6px; background: #F3F3F3; border: solid 1px #D9D9D9; height: 29px !important; cursor: pointer;}
+.btn:hover {}
+.btnBlue{border: 1px solid #3079ED; color: white; text-shadow: 0 1px rgba(0, 0, 0, 0.1); background-color: #4D90FE; background-image: -webkit-gradient(linear,left top,left bottom,from(#4d90fe  ),to(#4787ed  ));
+background-image: -webkit-linear-gradient(top,#4d90fe  ,#4787ed  );background-image: -moz-linear-gradient(top,#4d90fe  ,#4787ed  );background-image: -ms-linear-gradient(top,#4d90fe  ,#4787ed  );background-image: -o-linear-gradient(top,#4d90fe  ,#4787ed  );background-image: linear-gradient(top,#4d90fe  ,#4787ed  );}
+.btnBlue:hover {border: 1px solid #2F5BB7;color: white;text-shadow: 0 1px rgba(0, 0, 0, 0.3); background-color: #357AE8;background-image: -webkit-gradient(linear,left top,left bottom,from(#4d90fe),to(#357ae8));background-image: -webkit-linear-gradient(top,#4d90fe,#357ae8);
+background-image: -moz-linear-gradient(top,#4d90fe,#357ae8);background-image: -ms-linear-gradient(top,#4d90fe,#357ae8);background-image: -o-linear-gradient(top,#4d90fe,#357ae8);background-image: linear-gradient(top,#4d90fe,#357ae8);}
+
+/* GRID */
+
+#geraGrid {width: 99%; min-width: 960px; margin: 50px 0 0 0; padding: 0 0 0 1em; clear: both;}
+
+.checkbox_class li,
+.checkbox_class ul li {
+  margin-bottom: 5px;
+  padding-top: 2px;
+  position: relative;
+}
+
+.checkbox_class input,
+.checkbox_class ul input {
+  display: inline;
+  margin: 0 5px 0 -21px;
+  position: absolute;
+  top: 2px;
+}
+ 
+.checkbox_class ul {
+  margin: 5px 0 0 20px;
+  padding: 2px;
+}
+
+/* RODAPE */
+
+#footer {width: 100%; min-width: 960px; height: 30px; margin: 10em 0 0 0; border-top: 1px solid #3470A6; color: #000; font-size: 10px; padding-top:1em; text-align: center;}
