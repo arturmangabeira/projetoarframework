@@ -346,5 +346,5 @@
       <div class="content-wrapper">     
 <?php } ?>   
 <?php if($_REQUEST['ajax'] != "true") { ?>      
-      <div class="">     
+      <div class="content">     
 <?php } ?>          

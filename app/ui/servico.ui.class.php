@@ -76,9 +76,33 @@ class ServicoUI {
 		
 		$div1 = new ARDiv();
 		$div1->id = "tabelacliente";
-		
-		$div1->addItem($this->gerarGrid($servicoDTO));
-				
+                $div1->class = "row";
+                
+                $divGrid = new ARDiv();		
+                $divGrid->class = "col-xs-12";
+                
+		$divGrid->addItem(new ARTextHml("<div class=\"box\">
+                                                    <div class=\"box-header\"></div>
+                                                    <div class=\"box-body\">
+                                                    <div id=\"example2_wrapper\" class=\"dataTables_wrapper form-inline dt-bootstrap\">"));
+                $divRow = new ARDiv();
+                $divRow->class = "row";
+                
+                $dirClassSm = new ARDiv();
+                $dirClassSm->class = "col-sm-12";
+                
+		$dirClassSm->addItem($this->gerarGrid($servicoDTO));
+                
+                $divRow->addItem($dirClassSm);
+                	
+                $divGrid->addItem($divRow);
+                
+                $divGrid->addItem(new ARTextHml("</div>
+                                                  </div>
+                                                </div>"));
+                
+                $div1->addItem($divGrid);
+                
 		$divPai->addItem($fieldSetFiltro);
 		$divPai->addItem($div1);
 				
