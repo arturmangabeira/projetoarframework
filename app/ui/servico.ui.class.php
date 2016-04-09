@@ -26,7 +26,7 @@ class ServicoUI {
 
 		$form = new ARForm();
 		$form->method = TipoMethodForm::POST;
-		$form->action = "index.php?modulos=servico&acao=listar";
+		$form->action = "index.php?modules=servico&acao=listar";
 		$form->id = "frmcliente";
 		//$form->onsubmit("return validarFiltro();");
 		
@@ -95,7 +95,7 @@ class ServicoUI {
     	$form = new ARForm();
     	$form->method = TipoMethodForm::POST;
     	$form->enctype = TipoEncTypeForm::FILE;
-    	//$form->action = "index.php?modulos=configuracaoclienteclientemnt&acao=listar";
+    	//$form->action = "index.php?modules=configuracaoclienteclientemnt&acao=listar";
     	$form->id = "frmservico";
     	//$form->onsubmit("return validarFiltro();");
     	
@@ -162,7 +162,7 @@ class ServicoUI {
     	$botao->name = "btn_limpar";
     	$botao->class = TipoClassButton::PADRAO;
     	$botao->label = "Cancelar";
-    	$botao->onclick(" location.href = 'index.php?modulos=servico&acao=listar' ");
+    	$botao->onclick(" location.href = 'index.php?modules=servico&acao=listar' ");
     	$div->addItem($botao);
     	//Adiciona o botao ao form;
     	$form->addItem($div);
@@ -220,7 +220,7 @@ class ServicoUI {
     
     	$form = new ARForm();
     	$form->method = TipoMethodForm::POST;
-    	$form->action = "index.php?modulos=cliente&acao=listar";
+    	$form->action = "index.php?modules=cliente&acao=listar";
     	$form->id = "frmcliente";
     	//$form->onsubmit("return validarFiltro();");
     

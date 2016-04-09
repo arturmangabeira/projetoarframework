@@ -9,7 +9,7 @@ class GenericDTO extends BaseDTO {
     private $sortorder;
     private $itenperpage;
     private $count;
-    private $modulos;
+    private $modules;
     private $submodulo;
     private $acao;
     private $designer;
@@ -23,7 +23,7 @@ class GenericDTO extends BaseDTO {
        $this->setSortOrder($_REQUEST['sord']);
        $this->setPage($_REQUEST['page']);
        $this->setItenPerPage($_REQUEST['rows']);
-       $this->setModulos($_REQUEST['modulos']);
+       $this->setmodules($_REQUEST['modules']);
        $this->setSubModulo($_REQUEST['submodulo']);
        $this->setAcao($_REQUEST['acao']);
        $this->setDesigner($_REQUEST['designer']);
@@ -86,12 +86,12 @@ class GenericDTO extends BaseDTO {
         return $this->count;
     }
     
-    public function setModulos($modulos){
-        $this->modulos = $modulos;
+    public function setmodules($modules){
+        $this->modules = $modules;
     }
     
-    public function getModulos(){
-        return $this->modulos;
+    public function getmodules(){
+        return $this->modules;
     }
     
     public function setSubModulo($submodulo){

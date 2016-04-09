@@ -11,8 +11,9 @@ class ConfiguracaoClienteUI {
 		$divPai = new ARDiv();
 
 		$form = new ARForm();
+                $form->class = TipoFormClassBootstrap::FORM_HORIZONTAL;
 		$form->method = TipoMethodForm::POST;
-		$form->action = "index.php?modulos=cliente&acao=listar";
+		$form->action = "index.php?modules=cliente&acao=listar";
 		$form->id = "frmcliente";
 		//$form->onsubmit("return validarFiltro();");
 		
@@ -24,6 +25,7 @@ class ConfiguracaoClienteUI {
 		$txtNome->id = "desc_nome_empresa";
 		$txtNome->label = "Nome Empresa";
 		$txtNome->typeClassTextBox = TipoARTextBoxClass::SELECT;
+                $txtNome->sizeLabelBootStrapClass = 1;
 		$txtNome->bootStrap = true;
 		$form->addItem($txtNome);
 		
@@ -32,6 +34,7 @@ class ConfiguracaoClienteUI {
 		$txtLogin->id = "cod_cliente";
 		$txtLogin->label = "Código do Cliente";
 		$txtLogin->typeClassTextBox = TipoARTextBoxClass::SELECT;
+                $txtLogin->sizeLabelBootStrapClass = 1;
 		$txtLogin->bootStrap = true;
 		$form->addItem($txtLogin);		
 		
@@ -63,6 +66,7 @@ class ConfiguracaoClienteUI {
 		
 		$div1 = new ARDiv();
 		$div1->id = "tabelacliente";
+                $div1->class = "col-sm-12";
 		
 		$div1->addItem($this->gerarGrid($clienteDto));
 				
@@ -82,7 +86,7 @@ class ConfiguracaoClienteUI {
 		$form = new ARForm();
 		$form->method = TipoMethodForm::POST;
 		$form->enctype = TipoEncTypeForm::FILE;
-		//$form->action = "index.php?modulos=configuracaoclienteclientemnt&acao=listar";
+		//$form->action = "index.php?modules=configuracaoclienteclientemnt&acao=listar";
 		$form->id = "frmcliente";
 		//$form->onsubmit("return validarFiltro();");
 		
@@ -281,7 +285,7 @@ class ConfiguracaoClienteUI {
 		$botao->name = "btn_limpar";
 		$botao->class = TipoClassButton::PADRAO;
 		$botao->label = "Cancelar";
-		$botao->onclick(" location.href = 'index.php?modulos=configuracaocliente&acao=listar' ");
+		$botao->onclick(" location.href = 'index.php?modules=configuracaocliente&acao=listar' ");
 		$div->addItem($botao);
 		//Adiciona o botao ao form;
 		$form->addItem($div);
@@ -302,7 +306,7 @@ class ConfiguracaoClienteUI {
 		$form = new ARForm();
 		$form->method = TipoMethodForm::POST;
 		$form->enctype = TipoEncTypeForm::FILE;
-		//$form->action = "index.php?modulos=configuracaoclienteclientemnt&acao=listar";
+		//$form->action = "index.php?modules=configuracaoclienteclientemnt&acao=listar";
 		$form->id = "frmcliente";
 		//$form->onsubmit("return validarFiltro();");
 	
@@ -379,6 +383,8 @@ class ConfiguracaoClienteUI {
 	
 		$arGrid = new ARGrid();
 	
+                $arGrid->class = "table table-bordered table-hover dataTable";
+                
 		$arGrid->legend = "Lista de Clientes";
 	
 		$field = new ARField("id_cliente","");

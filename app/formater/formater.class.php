@@ -23,7 +23,7 @@ class FormaterUsuario implements IFormat {
     public function generateFormat($field, $arrayField) {
         $link = new ARLink();
         $link->text = $field;
-        $link->href = "index.php?modulos=usuario&acao=editar&designer=false&valueid={$arrayField->getSqUsuario()}";
+        $link->href = "index.php?modules=usuario&acao=editar&designer=false&valueid={$arrayField->getSqUsuario()}";
         $link->modal = true;
         $link->bootStrap = false;
         
@@ -65,7 +65,7 @@ class FormaterClienteLink implements IFormat {
 	 */
 	public function generateFormat($field, $arrayField) {
 		$imagem = new ARLink();
-		$imagem->href = "index.php?modulos=configuracaoclientemnt&acao=editarDescricao&designer=false&valueid={$arrayField->getId_Cliente()}";
+		$imagem->href = "index.php?modules=configuracaoclientemnt&acao=editarDescricao&designer=false&valueid={$arrayField->getId_Cliente()}";
 		$imagem->modal = true;
 		$imagem->modalWidth = "50";
 		$imagem->modalHeigth = "100";

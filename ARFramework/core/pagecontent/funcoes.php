@@ -213,7 +213,7 @@ class funcoes {
     
     public static function validarAcesso(){
         self::$acao = $_REQUEST['acao'];
-        self::$modulo = $_REQUEST['modulos'];
+        self::$modulo = $_REQUEST['modules'];
         self::$submodulo = $_REQUEST['submodulo'];
         
         $conn = Conexao::getInstance();

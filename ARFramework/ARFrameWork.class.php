@@ -51,20 +51,20 @@ class ARFrameWork{
 		
 		//nclusão do tema definido no config
 		$tema = Config::TEMA;
-		$caminhoTema = "app/temas/".$tema."/";
-		if(is_dir("app/temas/".$tema)){
+		$caminhoTema = "app/themes/".$tema."/";
+		if(is_dir("app/themes/".$tema)){
 		
-                        if(empty($_REQUEST['modulos'])){
-                            $_REQUEST['modulos'] = Config::PAGINA_INICIAL;
+                        if(empty($_REQUEST['modules'])){
+                            $_REQUEST['modules'] = Config::PAGINA_INICIAL;
                         }
                     
 			//nova instância criada pelo nome do modulo passado.
-			if(!empty($_REQUEST['modulos'])){	                                
+			if(!empty($_REQUEST['modules'])){	                                
 				//Obtém o nome do módulo para obter a classe a ser utilizada
-				//die("modulos/".$_REQUEST['modulos']."/".$_REQUEST['modulos'].".class.php");
+				//die("modules/".$_REQUEST['modules']."/".$_REQUEST['modules'].".class.php");
 								
-				//Listagem dos modulos para inclusão dinâmica.
-				$path = "app/modulos/";
+				//Listagem dos modules para inclusão dinâmica.
+				$path = "app/modules/";
 				
 				$diretorio = dir($path);
 				
@@ -165,12 +165,12 @@ class ARFrameWork{
 				try{				
 					//inclue uma nova instancia da classe passada por parametro para executar
 					//o métido generatePage sobrescrito na classe.
-					//$class = new ReflectionClass($_REQUEST['modulos']);
+					//$class = new ReflectionClass($_REQUEST['modules']);
 					//$instance = $class->newInstanceArgs();
 					 
 					//$method = new ReflectionMethod($instance, "generatePage");
 					//$method->invokeArgs($instance,$_REQUEST["acao"]);
-					$modulo = $_REQUEST['modulos'];
+					$modulo = $_REQUEST['modules'];
 					$class = new $modulo();
 					//escreve os argumentos para o generetPage
 					$args = json_decode(json_encode($_REQUEST), FALSE);
@@ -196,12 +196,20 @@ class ARFrameWork{
 					if ($_REQUEST['gerarScript'] != "false" && $_REQUEST['ajax'] != "true") {
 						//$method = new ReflectionMethod($instance, "obterScripts");
 						//echo $method->invoke($instance);
-						echo $class->obterScripts();
+                                                if(method_exists($class,'bindPage')){
+                                                    echo $class->obterScripts();
+                                                }else{
+                                                    throw new Exception("You most been extends in your class a class Page or PageGrid to start a page!");
+                                                }
 					}
 					
 					//Método respôsavél por criar toda a construção da página.
 					//O método é executado pela classe pai Page
-					$class->bindPage();
+                                        if(method_exists($class,'bindPage')){
+                                            $class->bindPage();
+                                        }else{
+                                            throw new Exception("You most been extends in your class a class Page or PageGrid to start a page!");
+                                        }
 					//$method = new ReflectionMethod($instance, "bindPage");
 					//echo $method->invoke($instance);
 					
@@ -213,7 +221,7 @@ class ARFrameWork{
 				}
 			}
 			
-			if($_REQUEST['ajax'] != "true" && $_REQUEST['ocultarDesigner'] != "true"){
+			if($_REQUEST['ajax'] != "true" && $_REQUEST['designer'] != "true"){
 				echo "</div>";
 				//inclue o footer do tema
 				include_once $caminhoTema."footer.php";
@@ -227,7 +235,7 @@ class ARFrameWork{
 	}
 	
 	static function obterTemaAtual(){
-		return "app/temas/".Config::TEMA."/";
+		return "app/themes/".Config::TEMA."/";
 	}
 	
 }

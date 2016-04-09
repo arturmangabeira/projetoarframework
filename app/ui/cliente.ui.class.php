@@ -31,28 +31,28 @@ class ClienteUI {
         $divConteiner->class = "sidebar-menu";
         
         $divConteiner->addItem(new ARTextHml("<ul class=\"sidebar-menu\">"));
-        $divConteiner->addItem(new ARTextHml("<li><a href=\"index.php?modulos=cliente&acao=exibir&page=bvd\"><i class=\"icon-home\"></i> Início</a></li>"));
+        $divConteiner->addItem(new ARTextHml("<li><a href=\"index.php?modules=cliente&acao=exibir&page=bvd\"><i class=\"icon-home\"></i> Início</a></li>"));
         
-        $divConteiner->addItem(new ARTextHml("<li><a href=\"index.php?modulos=cliente&acao=exibir&page=boleto\"><i class=\"icon-barcode\"></i> Boleto</a></li>"));
+        $divConteiner->addItem(new ARTextHml("<li><a href=\"index.php?modules=cliente&acao=exibir&page=boleto\"><i class=\"icon-barcode\"></i> Boleto</a></li>"));
 
 
-        $divConteiner->addItem(new ARTextHml("<li><a href=\"index.php?modulos=cliente&acao=exibir&page=extrato\"><i class=\"icon-th\"></i>Segunda Via</a></li>"));
+        $divConteiner->addItem(new ARTextHml("<li><a href=\"index.php?modules=cliente&acao=exibir&page=extrato\"><i class=\"icon-th\"></i>Segunda Via</a></li>"));
 
 
-        $divConteiner->addItem(new ARTextHml("<li><a href=\"index.php?modulos=cliente&acao=exibir&page=extrato\"><i class=\"icon-list-alt\"></i> Extrato Mensal</a></li>"));
+        $divConteiner->addItem(new ARTextHml("<li><a href=\"index.php?modules=cliente&acao=exibir&page=extrato\"><i class=\"icon-list-alt\"></i> Extrato Mensal</a></li>"));
 
 
-        $divConteiner->addItem(new ARTextHml("<li><a href=\"index.php?modulos=cliente&acao=exibir&page=demonstrativo\"><i class=\"icon-align-justify\"></i> Demonstrativo Anual</a></li>"));
+        $divConteiner->addItem(new ARTextHml("<li><a href=\"index.php?modules=cliente&acao=exibir&page=demonstrativo\"><i class=\"icon-align-justify\"></i> Demonstrativo Anual</a></li>"));
 	
         
         
         
-        $divConteiner->addItem(new ARTextHml("<li class=\"treeview\"><a class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\" href=\"index.php?modulos=configuracoes\">
+        $divConteiner->addItem(new ARTextHml("<li class=\"treeview\"><a class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\" href=\"index.php?modules=configuracoes\">
                                                 <i class=\"icon-cog\"></i> Configurações <span class=\"caret\"></span></a>
                                                 <ul class=\"treeview-menu\">
-                                                            <li><a href=\"index.php?modulos=configuracaocliente&acao=listar\">Clientes</a></li>
-                                                            <li><a href=\"index.php?modulos=servico&acao=listar\">Serviços</a></li>
-                                                            <li><a href=\"index.php?modulos=servicocliente&acao=listar\">Serviços do Cliente</a></li>
+                                                            <li><a href=\"index.php?modules=configuracaocliente&acao=listar\">Clientes</a></li>
+                                                            <li><a href=\"index.php?modules=servico&acao=listar\">Serviços</a></li>
+                                                            <li><a href=\"index.php?modules=servicocliente&acao=listar\">Serviços do Cliente</a></li>
                                                                 <li role=\"separator\" class=\"divider\"></li>
                                                             <li><a href=\"#\">Preferências</a></li>												            												            
                                                      </ul>
@@ -66,7 +66,7 @@ class ClienteUI {
         $button->class = TipoClassButton::AZUL;
         $button->bootstrap = false;
         $button->label = "<i class=\"icon-off\"></i> Sair";
-       //$button->onclick(" location.href='index.php?modulos=login&acao=logout'; ");
+       //$button->onclick(" location.href='index.php?modules=login&acao=logout'; ");
                
         $button->setAction = new ARAction("login", "logout");;
         //$button->setAction = new ActionButton("login", "logout");;
@@ -94,7 +94,7 @@ class ClienteUI {
     
     public function gerarBoasVindas(){
         $div = new ARDiv();
-        $div->class = "alert alert-block";
+        $div->class = "alert alert-warning alert-dismissible";
         $div->addItem(new ARTextHml("<h4>Bem Vindo !</h4>"));
         if($_SESSION["acessoAdmin"] == false){
 	        if($_SESSION["tipoCliente"] == "L"){
@@ -119,7 +119,7 @@ class ClienteUI {
         
         $form = new ARForm();
         $form->name = "form_boleto";
-        $form->action = "index.php?modulos=cliente&acao=gerarBoleto&page=boleto";
+        $form->action = "index.php?modules=cliente&acao=gerarBoleto&page=boleto";
         $form->method = TipoMethodForm::POST;
         $form->onsubmit("
                           if ($('#dsCpfCnpj').val() == ''){
@@ -144,7 +144,7 @@ class ClienteUI {
                           }
                           var cpfcnpj = $('#dsCpfCnpj').val();
                           var dtenvio = $('#dsMesBase').val();
-                          return gerarModalPDF('index.php?modulos=cliente&acao=gerarBoleto&ajax=true&cpfcnpj='+cpfcnpj+'&dtenvio='+dtenvio);
+                          return gerarModalPDF('index.php?modules=cliente&acao=gerarBoleto&ajax=true&cpfcnpj='+cpfcnpj+'&dtenvio='+dtenvio);
                         ");
         
         $text = new ARTextBox();
@@ -195,7 +195,7 @@ class ClienteUI {
         
         $form = new ARForm();
         $form->name = "form_boleto";
-        $form->action = "index.php?modulos=cliente&acao=gerarExtrato&page=extrato";
+        $form->action = "index.php?modules=cliente&acao=gerarExtrato&page=extrato";
         $form->method = TipoMethodForm::POST;
         $form->onsubmit("                          
                           if ($('#dsMesBase').val() == ''){
@@ -205,7 +205,7 @@ class ClienteUI {
                           }
                           var cpfcnpj = $('#dsCpfCnpj').val();
                           var dtenvio = $('#dsMesBase').val();                          
-                          return gerarModalPDF('index.php?modulos=cliente&acao=gerarExtrato&designer=false&cpfcnpj='+cpfcnpj+'&dtenvio='+dtenvio);
+                          return gerarModalPDF('index.php?modules=cliente&acao=gerarExtrato&designer=false&cpfcnpj='+cpfcnpj+'&dtenvio='+dtenvio);
                         ");
         //Mes base
         $text = new ARTextBox();
@@ -239,7 +239,7 @@ class ClienteUI {
         
         $form = new ARForm();
         $form->name = "form_boleto";
-        $form->action = "index.php?modulos=cliente&acao=gerarDemonstrativo&page=demonstrativo";
+        $form->action = "index.php?modules=cliente&acao=gerarDemonstrativo&page=demonstrativo";
         $form->method = TipoMethodForm::POST;
         $form->onsubmit("
                           if ($('#dsAnoBase').val() == ''){
@@ -249,7 +249,7 @@ class ClienteUI {
                           }
                           var cpfcnpj = $('#dsCpfCnpj').val();
                           var dtenvio = $('#dsAnoBase').val();
-                          return gerarModalPDF('index.php?modulos=cliente&acao=gerarDemonstrativo&ajax=true&cpfcnpj='+cpfcnpj+'&dtenvio='+dtenvio);
+                          return gerarModalPDF('index.php?modules=cliente&acao=gerarDemonstrativo&ajax=true&cpfcnpj='+cpfcnpj+'&dtenvio='+dtenvio);
                         ");
         //Mes base
         $text = new ARTextBox();

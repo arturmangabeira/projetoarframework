@@ -54,7 +54,7 @@ class LoginUI {
             $form = new ARForm();
             $form->id = "frm_login";
             $form->name = "frm_login";
-            //$form->action = "index.php?modulos=login&acao=logar";
+            //$form->action = "index.php?modules=login&acao=logar";
             $form->method = TipoMethodForm::POST;
             if($tipoAcesso == "S"){
             	$form->style = "margin-left: -100px;";
@@ -118,7 +118,7 @@ class LoginUI {
 	            $div->addItem(new ARTextHml(" <span>te</span> "));
 	            //Imagem capatcha
 	            $img = new ARImage();
-	            $img->src = "index.php?modulos=login&acao=gerarCpt&ajax=true";
+	            $img->src = "index.php?modules=login&acao=gerarCpt&ajax=true";
 	            $div->addItem($img);
 	            */
             	$divCaptcha = new ARDiv();
@@ -260,7 +260,7 @@ class LoginUI {
     		$form = new ARForm();
     		$form->id = "frm_login";
     		$form->name = "frm_login";
-    		//$form->action = "index.php?modulos=login&acao=logar";
+    		//$form->action = "index.php?modules=login&acao=logar";
     		$form->method = TipoMethodForm::POST;
     		$form->style = "margin-left: -100px;";
     

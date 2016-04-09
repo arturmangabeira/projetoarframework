@@ -1,7 +1,7 @@
 <?php
 
 class TipoFormClassBootstrap{
-    const FORM_HOROZONTAL = "form-horizontal";
+    const FORM_HORIZONTAL = "form-horizontal";
     const FORM_VERTICAL = "form";
 }
 

@@ -256,7 +256,7 @@ class ARGrid extends objetoHTML {
         }
         
         if(empty($this->classSubmitButtons)){
-        	$this->classSubmitButtons = $this->genericDTO->getModulos();
+        	$this->classSubmitButtons = $this->genericDTO->getmodules();
         }
     }
     
@@ -358,7 +358,7 @@ class ARGrid extends objetoHTML {
 	                if($this->showButtonNew){
 	                    $scripts .= " 
 	                                  function incluirRegistro_{$this->id}(){
-	                                      location.href = 'index.php?modulos={$this->classSubmitButtons}&acao=".Config::ACAO_NOVO."';".
+	                                      location.href = 'index.php?modules={$this->classSubmitButtons}&acao=".Config::ACAO_NOVO."';".
 	                                  "
 	                                  }   
 	                               ";
@@ -391,7 +391,7 @@ class ARGrid extends objetoHTML {
 	                                                return false;
 	                                            }
 	                                        }
-	                                        location.href='index.php?modulos={$this->classSubmitButtons}&acao=".Config::ACAO_EDITAR."&valueid='+idSel;
+	                                        location.href='index.php?modules={$this->classSubmitButtons}&acao=".Config::ACAO_EDITAR."&valueid='+idSel;
 	                                 }   
 	                                ";
 	                }
@@ -417,7 +417,7 @@ class ARGrid extends objetoHTML {
 	                                        }
 	
 	                                        if (confirm('Deseja excluir o(s) iten(s) selecionado(s) ?')){
-	                                           location.href='index.php?modulos={$this->genericDTO->getModulos()}&acao=".Config::ACAO_EXCLUIR."&valueid='+idSel.join();            
+	                                           location.href='index.php?modules={$this->genericDTO->getmodules()}&acao=".Config::ACAO_EXCLUIR."&valueid='+idSel.join();            
 	                                        }else{
 	                                           return false;
 	                                        } 
@@ -653,7 +653,7 @@ class ARGrid extends objetoHTML {
         	
         	$strgrid .= " <script type=\"text/javascript\" >
         	function incluirRegistro_{$this->id}(){
-        	location.href = 'index.php?modulos={$this->genericDTO->getModulos()}&acao=".Config::ACAO_NOVO."';".
+        	location.href = 'index.php?modules={$this->genericDTO->getmodules()}&acao=".Config::ACAO_NOVO."';".
         	"
                                   }
 				</script>
@@ -852,10 +852,10 @@ class ARGrid extends objetoHTML {
             $enderecoAjax = "";
             $funcao = "";
             if(!$this->ajax){
-                $endereco = "index.php?modulos={$this->genericDTO->getModulos()}&submodulo={$this->genericDTO->getSubModulo()}&acao={$this->genericDTO->getAcao()}";
+                $endereco = "index.php?modules={$this->genericDTO->getmodules()}&submodulo={$this->genericDTO->getSubModulo()}&acao={$this->genericDTO->getAcao()}";
             }else{
                 $endereco = "#lnk";
-                $enderecoAjax = "index.php?modulos={$this->genericDTO->getModulos()}&submodulo={$this->genericDTO->getSubModulo()}&acao={$this->actionAjaxSubmit}&ajax=true&tlbid={$this->id}";
+                $enderecoAjax = "index.php?modules={$this->genericDTO->getmodules()}&submodulo={$this->genericDTO->getSubModulo()}&acao={$this->actionAjaxSubmit}&ajax=true&tlbid={$this->id}";
             }
             //Concatena os filtros passado pela consulta informado na grid.
 //            if($this->concatFilter->count() >0){
@@ -887,10 +887,19 @@ class ARGrid extends objetoHTML {
                 }
             }
             
-            $strgrid .= "
+            if(Config::VERSAO_BOOTSTRAP == 3){
+                $strgrid .= "<a name=\"#lnk\"></a> \r\n"
+                        . "<div class=\"col-sm-10\">"
+                        . "<div class=\"dataTables_paginate paging_simple_numbers\">\r\n"
+                        . "<ul class=\"pagination\">";
+               
+            }else{
+            
+                $strgrid .= "
                      <a name=\"#lnk\"></a>
                     <div class=\"pagination pagination-centered\">
                         <ul>";
+            }
             $class = "";
             $enderecoInicial = $endereco;
             if($this->page == 1){
@@ -968,8 +977,12 @@ class ARGrid extends objetoHTML {
             }
             $strgrid .= " </li> <li></li><li class=\"{$classFinal}\" id=\"li4\"><a href=\"{$enderecoPagina}\" {$funcao} >Última </a>
                     </li> ";
+            
             $strgrid .= "</ul>
                     </div>";
+            if(Config::VERSAO_BOOTSTRAP == 3){
+                $strgrid .= "</div>";
+            }
         }
     }
     

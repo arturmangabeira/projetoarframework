@@ -7,6 +7,18 @@ class TipoARSelectBox {
     const ASMSELECT = "asmselect";
     const MULTISELECT = "multiselect";
 }
+
+class TipoARSelectClass{
+    const PADRAO = "PADRAO";
+    const SELECT = "SELECT";
+    const MINI = "MINI";
+    const SMALL = "SMALL";
+    const MEDIUM = "MEDIUM";
+    const LARGE = "LARGE";
+    const XLARGE= "XLARGE";
+    const XXLARGE = "XXLARGE";
+}
+
 /**
  * Description of ARCheckBox
  *
@@ -40,6 +52,14 @@ class ARSelectBox extends objetoHTML {
     var $size;
     var $label;
     var $require;
+    var $bootStrap = true;
+    /**
+     *
+     * @var TipoARSelectClass 
+     */
+    var $tipoArSelectCless;
+    
+    var $sizeLabelBootStrapClass = 1;
     
     public function __construct() {
         parent::__construct();
@@ -187,9 +207,9 @@ class ARSelectBox extends objetoHTML {
     }
     
     private function gerarCombo(){
-       $combo  = "\r\n"." <div class=\"control-group\"> ";
-       $combo .= "\r\n"."       <label class=\"control-label\" for=\"{$this->id}\">{$this->label}:</label>";
-       $combo .= "\r\n"." <div class=\"controls\"> ";
+       if($this->bootStrap){             
+            $combo = $this->obterBootStrapDiv($this->tipoArSelectCless);
+       }
        if($this->obterCampo()->count() > 0){
            $desabilitar = "";
            if ($this->disable)
@@ -200,7 +220,7 @@ class ARSelectBox extends objetoHTML {
            	$required = " required=\"true\" ";
            }
                
-           $combo .= "\r\n"."   <select id=\"{$this->id}\" {$desabilitar} name=\"{$this->name}\" {$this->function} class=\"{$this->class}\" style=\"{$this->style}\" size=\"{$this->size}\" {$required}>";
+           $combo .= "\r\n"."   <select id=\"{$this->id}\" {$desabilitar} name=\"{$this->name}\" {$this->function} class=\"{$this->tipoArSelectCless}\" style=\"{$this->style}\" size=\"{$this->size}\" {$required}>";
            if ($this->showIniValues){
                $combo .= "\r\n"."      <option value=\"{$this->iniValue}\"> {$this->iniCaption} </option>";
            }
@@ -213,8 +233,10 @@ class ARSelectBox extends objetoHTML {
                $combo .= "\r\n"."      <option value=\"{$campo->getField()}\" {$selecionado} style=\"{$campo->getStyle()}\"> {$campo->getFieldCaption()} </option>";  
            }
            $combo .= "\r\n"."   </select>";
-           $combo .= "\r\n"." </div>";
-           $combo .= "\r\n"." </div>";
+           if($this->bootStrap){ 
+                $combo .= "\r\n"." </div>";
+                $combo .= "\r\n"." </div>";
+           }
        }
        
        return $combo;
@@ -244,6 +266,26 @@ class ARSelectBox extends objetoHTML {
        $div_dados_selecionados .= $combo."</div>"."\r\n"."<br />"."\r\n"." <div id=\"dados_selecionados_text\">"."\r\n"." </div>";
        
        return $div_dados_selecionados;
+    }
+    
+    protected function obterBootStrapDiv($textBoxClass){
+        $divBootStrap = "";
+        if(Config::VERSAO_BOOTSTRAP == "2"){
+            $divBootStrap  = " <div class=\"control-group\"> ";
+            $divBootStrap .= " <label class=\"control-label\" for=\"{$this->id}\">{$this->label}:</label>";
+            $divBootStrap .= " <div class=\"controls\"> ";
+        }else{
+            if(Config::VERSAO_BOOTSTRAP == "3"){
+                $divBootStrap  = " <div class=\"form-group\"> ";
+                $divBootStrap .= " <label class=\"col-sm-{$this->sizeLabelBootStrapClass} control-label\" for=\"{$this->id}\">{$this->label}:</label>";
+                $classe = ARBootstrap::obterClassBootStrap($this, $textBoxClass);
+                $divBootStrap .= " <div class=\"{$classe}\"> ";
+                //aletera o valor para ficar a propriedade passada
+                $this->tipoArSelectCless = "form-control";
+            }
+        }
+        
+        return $divBootStrap;
     }
     
 }

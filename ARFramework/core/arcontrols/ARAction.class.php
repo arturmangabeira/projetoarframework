@@ -23,7 +23,7 @@ class ARAction{
 	
 	public function obterURLMetodo(){
 		
-		$url['modulos'] = $this->classe;
+		$url['modules'] = $this->classe;
 		// get the method name
 		$url['metodo'] = $this->metodo;
 		

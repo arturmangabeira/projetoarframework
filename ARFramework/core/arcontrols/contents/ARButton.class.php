@@ -15,6 +15,17 @@ class TipoClassButton {
     const PADRAO = "";
 }
 
+class TipoARButtonClass{
+    const PADRAO = "PADRAO";
+    const SELECT = "SELECT";
+    const MINI = "MINI";
+    const SMALL = "SMALL";
+    const MEDIUM = "MEDIUM";
+    const LARGE = "LARGE";
+    const XLARGE= "XLARGE";
+    const XXLARGE = "XXLARGE";
+}
+
 class TipoSizeButton {
 	const GRANDE = "btn btn-large";
 	const PADRAO  = "btn btn-default";
@@ -64,6 +75,12 @@ class ARButton extends objetoHTML {
     var $causesValidation;
     var $causesValidationScriptCuston;
     var $setActionScriptCustom;
+    
+    /**
+     *
+     * @var TipoARButtonClass
+     */
+    var $typeArButtonBox;
     
     /**
      * Variavel do tipo ARAction		
@@ -122,7 +139,12 @@ class ARButton extends objetoHTML {
     }
     
     private function gerarBotao(){
-        $button = " <button type=\"button\" class=\"$this->sizeButton {$this->class}\" style=\"{$this->style}\" name=\"{$this->name}\" id=\"{$this->id}\"";
+        
+        if($this->bootStrap){                       
+            $button = $this->obterBootStrapDiv($this->typeArButtonBox);
+        }
+        
+        $button .= " <button type=\"button\" class=\"$this->sizeButton {$this->class}\" style=\"{$this->style}\" name=\"{$this->name}\" id=\"{$this->id}\"";
        
        //Adiciona os eventos a serem disparados através de reflection.
         $class = new ReflectionClass(get_class($this));
@@ -148,12 +170,17 @@ class ARButton extends objetoHTML {
         }
        $button .= ">  ";
        
-       $button .= " {$this->label} </button> ";
+       $button .= " {$this->label} </button> \r\n";
+       
+       if($this->bootStrap){ 
+            $button .= "\r\n"." </div>";
+            $button .= "\r\n"." </div>";
+       }
        
        $urlActionMetodoButton = "";
        if($this->setAction != null){
        		$action = $this->setAction;
-       		//$urlActionMetodoButton = "index.php?modulos=".$action->getClasse()."&metodo=".$action->getMetodo()."&ajax=true";
+       		//$urlActionMetodoButton = "index.php?modules=".$action->getClasse()."&metodo=".$action->getMetodo()."&ajax=true";
        		$urlActionMetodoButton = $action->obterURLMetodo();
        }
                      
@@ -364,6 +391,26 @@ class ARButton extends objetoHTML {
        $button .= $script;
        
        return $button;
+    }
+    
+     private function obterBootStrapDiv($textBoxClass){
+        $divBootStrap = "";
+        if(Config::VERSAO_BOOTSTRAP == "2"){
+            $divBootStrap  = " <div class=\"control-group\"> \r\n";
+            $divBootStrap .= " <label class=\"control-label\" for=\"{$this->id}\">{$this->label}:</label>\r\n";
+            $divBootStrap .= " <div class=\"controls\"> \r\n";
+        }else{
+            if(Config::VERSAO_BOOTSTRAP == "3"){
+                $divBootStrap  = " <div class=\"form-group\"> \r\n";
+                $divBootStrap .= " <label class=\"col-sm-1 control-label\" for=\"{$this->id}\">{$this->label}:</label>\r\n";
+                $classe = ARBootstrap::obterClassBootStrap($this, $textBoxClass);
+                $divBootStrap .= " <div class=\"{$classe}\"> \r\n";
+                //aletera o valor para ficar a propriedade passada
+                //$this->typeArButtonBox = "form-control";
+            }
+        }
+        
+        return $divBootStrap;
     }
     
 }

@@ -73,6 +73,9 @@ class ARTextBox extends objetoHTML {
      * @var TipoARTextBoxMask
      */
     var $typeARTextBoxMask;
+    
+    var $sizeLabelBootStrapClass = "1";
+    
     private $mask;
     
     public function __construct() {
@@ -318,12 +321,7 @@ class ARTextBox extends objetoHTML {
     
     private function gerarTextBox(){
         $textBox  = "";
-        if($this->typeARTextBox != TipoARTextBox::HIDDEN && $this->bootStrap){            
-            /*
-            $textBox  = " <div class=\"control-group\"> ";
-            $textBox .= " <label class=\"control-label\" for=\"{$this->id}\">{$this->label}:</label>";
-            $textBox .= " <div class=\"controls\"> ";              
-            */
+        if($this->typeARTextBox != TipoARTextBox::HIDDEN && $this->bootStrap){                       
             $textBox = $this->obterBootStrapDiv($this->typeClassTextBox);
         }
         if($this->typeARTextBox == TipoARTextBox::DATETIME_YEAR || $this->typeARTextBox == TipoARTextBox::DATETIME || $this->typeARTextBox == TipoARTextBox::DATETIME_MONTH_YEAR || $this->typeARTextBox == TipoARTextBox::NUMBER){
@@ -385,7 +383,7 @@ class ARTextBox extends objetoHTML {
         }else{
             if(Config::VERSAO_BOOTSTRAP == "3"){
                 $divBootStrap  = " <div class=\"form-group\"> ";
-                $divBootStrap .= " <label class=\"col-sm-1 control-label\" for=\"{$this->id}\">{$this->label}:</label>";
+                $divBootStrap .= " <label class=\"col-sm-{$this->sizeLabelBootStrapClass} control-label\" for=\"{$this->id}\">{$this->label}:</label>";
                 $classe = ARBootstrap::obterClassBootStrap($this, $textBoxClass);
                 $divBootStrap .= " <div class=\"{$classe}\"> ";
                 //aletera o valor para ficar a propriedade passada

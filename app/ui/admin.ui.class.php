@@ -36,7 +36,7 @@ class AdminUI {
 		$form = new ARForm ();
 		$form->id = "frm_login";
 		$form->name = "frm_login";
-		// $form->action = "index.php?modulos=login&acao=logar";
+		// $form->action = "index.php?modules=login&acao=logar";
 		$form->method = TipoMethodForm::POST;
 		if ($tipoAcesso == "S") {
 			$form->style = "margin-left: -100px;";
@@ -56,6 +56,8 @@ class AdminUI {
 		$textBox->bootStrap = true;
 		$textBox->label = "Login";		
 		$textBox->require = true;
+                $textBox->typeClassTextBox = TipoARTextBoxClass::SMALL;
+                $textBox->sizeLabelBootStrapClass = "5";
 		
 		
 		$div->addItem ( $textBox );
@@ -69,6 +71,9 @@ class AdminUI {
 		$textBox->maxLength = 20;
 		$textBox->bootStrap = true;
 		$textBox->require = true;
+                $textBox->typeClassTextBox = TipoARTextBoxClass::SMALL;
+                $textBox->sizeLabelBootStrapClass = "5";
+                
 		$div->addItem ( $textBox );
 			
 		$form->addItem ( $div );		
@@ -89,7 +94,7 @@ class AdminUI {
 			$div->addItem ( new ARTextHml ( " <span>te</span> " ) );
 			// Imagem capatcha
 			$img = new ARImage ();
-			$img->src = "index.php?modulos=login&acao=gerarCpt&ajax=true";
+			$img->src = "index.php?modules=login&acao=gerarCpt&ajax=true";
 			$div->addItem ( $img );
 		}
 		
