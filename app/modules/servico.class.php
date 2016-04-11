@@ -29,16 +29,13 @@ class Servico extends Page {
     	
     }
     
-    public function filtrar(){
-    	
-        ARMessage::showMessage("Teste de mensagem com dialog!", ARMessageType::AVISO);
+    public function filtrar(){    	 
                
     	$servicoDTO = new ServicoDTO();
     	$servicoDTO->bindContextDTO();
     	$result = $servicoDTO->obterPorFiltroDTO();
     	
-    	$this->addItemPage($this->servicoUI->gerarPaginaServico($result));
-    	
+    	$this->addItemPage($this->servicoUI->gerarPaginaServico($result));    	
     }
     
     public function excluir(){

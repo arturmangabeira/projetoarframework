@@ -20,30 +20,30 @@ class ARMessage {
 		if(!empty($message)){
 			$class = "";
 			if($messageType == ARMessageType::AVISO){
-				$class = "icon-info-sign";
+				$class = "btn-primary";
                                 $imagem = "ARFramework/lib/images/info.png";
                                 $texto = "Aviso";
 			}
 			if($messageType == ARMessageType::ERRO){
-				$class = "icon-ban-circle";
-                                $imagem = "";
+				$class = "btn-danger";
+                                $imagem = "ARFramework/lib/images/error.png";
+                                $texto = "Erro";
 			}
 			if($messageType == ARMessageType::SUCESSO){
-				$class = "icon-ok";
-                                $imagem = "";
+				$class = "btn-success";
+                                $imagem = "ARFramework/lib/images/success.png";
+                                $texto = "Sucesso";
 			}
-			
-                        $mensagem = "<i class=\"{$class}\"></i><p class=\"text-center\">{$message}</p>";                        
-                        
+			                                                
 			$script = "<script type=\"text/javascript\">";
                         
                         $script .= "bootbox.dialog({
                                     title: \"{$texto}\",
-                                    message: '<img src=\"{$imagem}\" width=\"100px\"/>{$mensagem}',
+                                    message: '<img src=\"{$imagem}\" width=\"80px\" height=\"80px\"/>&nbsp;{$message}',
                                      buttons: {
                                             success: {
                                               label: \"Ok!\",
-                                              className: \"btn-success\",
+                                              className: \"{$class}\",
                                               callback: function() {
                                                 {$callBackFunctionJavaScript}
                                               }

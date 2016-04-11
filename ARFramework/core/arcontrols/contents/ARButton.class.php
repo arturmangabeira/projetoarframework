@@ -212,11 +212,13 @@ class ARButton extends objetoHTML {
 						          if (element.is('input')){
 							          if(element.val() == element.attr('placeholder') || $.trim(element.val()) == '' ){
 							          	if($('label[for=\"'+element.attr('name')+'\"]').html() != undefined){
-							           		bootbox.alert(\"<i class='icon-info-sign'></i><p class='text-center'>Favor preencher o campo \" + $('label[for=\"'+element.attr('name')+'\"]').html().replace(/\:/g,'')+\"</p>\", function() {
-											  element.focus();
-											});							           		
+							           		//bootbox.alert(\"<i class='icon-info-sign'></i><p class='text-center'>Favor preencher o campo \" + $('label[for=\"'+element.attr('name')+'\"]').html().replace(/\:/g,'')+\"</p>\", function() {
+											  //element.focus();
+											//});
+											ARFrameworkMessage(\"Favor preencher o campo \" + $('label[for=\"'+element.attr('name')+'\"]').html().replace(/\:/g,''),'aviso');
 							           	}else{
-							           		bootbox.alert(\"Favor preencher o campo em destaque \");
+							           		//bootbox.alert(\"Favor preencher o campo em destaque \");
+							           		ARFrameworkMessage(\"Favor preencher o campo em destaque \",'aviso');
 							           	}
 							           	element.focus();
 							           	retorno = false;
@@ -226,9 +228,10 @@ class ARButton extends objetoHTML {
 						          	 if (element.is('select')){
 						          	 	if(element.val() == '0' || element.val() == ''){
 						          	 		if($('label[for=\"'+element.attr('name')+'\"]') != undefined){
-							           			bootbox.alert(\"Favor preencher o campo \" + $('label[for=\"'+element.attr('name')+'\"]').html().replace(/\:/g,''));
+							           			//bootbox.alert(\"Favor preencher o campo \" + $('label[for=\"'+element.attr('name')+'\"]').html().replace(/\:/g,''));
+							           			ARFrameworkMessage(\"Favor preencher o campo \" + $('label[for=\"'+element.attr('name')+'\"]').html().replace(/\:/g,''),'aviso');
 								           	}else{
-								           		bootbox.alert(\"Favor preencher o campo em destaque \");
+								           		ARFrameworkMessage(\"Favor preencher o campo em destaque \",'aviso');
 								           	}           
 							           		element.focus();
 							           		retorno = false;
@@ -240,11 +243,12 @@ class ARButton extends objetoHTML {
 						          	 		//alert(tinyMCE.get($(this).attr('id')).getContent());
 						          	 		if($.trim(tinyMCE.get($(this).attr('id')).getContent()) == ''){
 							          	 		if($('label[for=\"'+element.attr('name')+'\"]') != undefined){
-								          	 		bootbox.alert(\"<i class='icon-info-sign'></i><p class='text-center'>Favor preencher o campo \" + $('label[for=\"'+element.attr('name')+'\"]').html().replace(/\:/g,'')+\"</p>\", function() {
-													  element.focus();
-													});
+								          	 		//bootbox.alert(\"<i class='icon-info-sign'></i><p class='text-center'>Favor preencher o campo \" + $('label[for=\"'+element.attr('name')+'\"]').html().replace(/\:/g,'')+\"</p>\", function() {
+													  //element.focus();
+													//});
+													ARFrameworkMessage(\"Favor preencher o campo \" + $('label[for=\"'+element.attr('name')+'\"]').html().replace(/\:/g,''),'aviso');
 												}else{
-													bootbox.alert(\"Favor preencher o campo em destaque \");
+													ARFrameworkMessage(\"Favor preencher o campo em destaque \",'aviso');
 												}
 												element.focus();
 								           		retorno = false;
@@ -254,11 +258,12 @@ class ARButton extends objetoHTML {
 						          	 		//obtém o texto do texarea para verificar se foi passado o valor
 						          	 		if($.trim(element.val()) == ''){
 							          	 		if($('label[for=\"'+element.attr('name')+'\"]') != undefined){
-								          	 		bootbox.alert(\"<i class='icon-info-sign'></i><p class='text-center'>Favor preencher o campo \" + $('label[for=\"'+element.attr('name')+'\"]').html().replace(/\:/g,'')+\"</p>\", function() {
-													  element.focus();
-													});
+								          	 		//bootbox.alert(\"<i class='icon-info-sign'></i><p class='text-center'>Favor preencher o campo \" + $('label[for=\"'+element.attr('name')+'\"]').html().replace(/\:/g,'')+\"</p>\", function() {
+													  //element.focus();
+													//});
+													ARFrameworkMessage(\"Favor preencher o campo \" + $('label[for=\"'+element.attr('name')+'\"]').html().replace(/\:/g,''),'aviso');
 												}else{
-													bootbox.alert(\"Favor preencher o campo em destaque \");
+													ARFrameworkMessage(\"Favor preencher o campo em destaque \",'aviso');
 												}
 												element.focus();
 								           		retorno = false;

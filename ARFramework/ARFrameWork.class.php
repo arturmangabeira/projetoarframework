@@ -95,8 +95,9 @@ class ARFrameWork{
 				
 				if($_REQUEST['ajax'] != "true"){
 					$script = "
-								<script src=\"ARFramework/lib/javascript/fancybox/source/jquery.fancybox.pack.js\" type=\"text/javascript\"></script>
+							<script src=\"ARFramework/lib/javascript/fancybox/source/jquery.fancybox.pack.js\" type=\"text/javascript\"></script>
         						<script src=\"ARFramework/lib/javascript/jquery-ui-1.10.1.custom/js/jquery-ui-1.10.1.custom.js\" type=\"text/javascript\"></script> 
+                                                        <script src=\"ARFramework/lib/javascript/ARFramework.js\" type=\"text/javascript\"></script> 
         						<link rel=\"stylesheet\" type=\"text/css\" href=\"ARFramework/lib/javascript/jquery-ui-1.10.1.custom/css/cupertino/jquery-ui-1.10.1.custom.css\">
         						<link rel=\"stylesheet\" type=\"text/css\" href=\"ARFramework/lib/javascript/fancybox/source/jquery.fancybox.css\"> 
 								<script type=\"text/javascript\">
