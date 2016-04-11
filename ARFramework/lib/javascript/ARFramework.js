@@ -37,7 +37,7 @@ function ARFrameworkMessage(pmessage,typeMessage,callBackFunction,redirect,timeo
               label: "Ok",
               className: classbutton,
               callback: function() {
-            	//callBackFunction
+            	callBackFunction
               }
            }
 	    }
