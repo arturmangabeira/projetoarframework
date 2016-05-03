@@ -47,6 +47,7 @@ class Config{
     
     const CAMINHO_CADASTRO_CLIENTES = "clientes/";
     
+    const SITE_ADDRESS = "/projetoarframework/";
     //CONFIGURAÇÕES DO TEMA
     const TEMA = "adminlte";
     

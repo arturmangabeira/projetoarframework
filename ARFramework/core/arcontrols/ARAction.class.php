@@ -23,6 +23,10 @@ class ARAction{
 	
 	public function obterURLMetodo(){
 		
+                /*
+                 * COMENTADO PARA SER UTILIZADO EM OUTRO MOMENTO.
+                 */
+                /*            
 		$url['modules'] = $this->classe;
 		// get the method name
 		$url['metodo'] = $this->metodo;
@@ -36,7 +40,10 @@ class ARAction{
 		}
 		//devolve a string de montagem para execução do método.		
 		return 'index.php?'.http_build_query($url);
-		
+		*/
+            
+                return Config::SITE_ADDRESS."action/{$this->classe}/$this->metodo";
+            
 	}
 	
 	

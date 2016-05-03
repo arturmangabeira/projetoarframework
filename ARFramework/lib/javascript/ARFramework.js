@@ -10,7 +10,7 @@ function ARFrameworkMessage(pmessage,typeMessage,callBackFunction,redirect,timeo
 	
 	
 	if(typeMessage == "aviso"){
-		imagem = "ARFramework/lib/images/info.png";
+		imagem = "/ARFramework/lib/images/info.png";
         texto = "Aviso";
         classbutton = "btn-primary";
                

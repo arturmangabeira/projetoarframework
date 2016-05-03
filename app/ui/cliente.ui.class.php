@@ -33,18 +33,24 @@ class ClienteUI {
         $divConteiner->addItem(new ARTextHml("<ul class=\"sidebar-menu\">"));
         $divConteiner->addItem(new ARTextHml("<li><a href=\"index.php?modules=cliente&acao=exibir&page=bvd\"><i class=\"icon-home\"></i> Início</a></li>"));
         
-        $divConteiner->addItem(new ARTextHml("<li><a href=\"index.php?modules=cliente&acao=exibir&page=boleto\"><i class=\"icon-barcode\"></i> Boleto</a></li>"));
+        //$divConteiner->addItem(new ARTextHml("<li><a href=\"index.php?modules=cliente&acao=exibir&page=boleto\"><i class=\"icon-barcode\"></i> Boleto</a></li>"));
+        $url = Config::SITE_ADDRESS."modules/cliente/exibir/0/boleto";
+        $divConteiner->addItem(new ARTextHml("<li><a href=\"{$url}\"><i class=\"icon-barcode\"></i> Boleto</a></li>"));
 
 
-        $divConteiner->addItem(new ARTextHml("<li><a href=\"index.php?modules=cliente&acao=exibir&page=extrato\"><i class=\"icon-th\"></i>Segunda Via</a></li>"));
-
-
-        $divConteiner->addItem(new ARTextHml("<li><a href=\"index.php?modules=cliente&acao=exibir&page=extrato\"><i class=\"icon-list-alt\"></i> Extrato Mensal</a></li>"));
-
-
-        $divConteiner->addItem(new ARTextHml("<li><a href=\"index.php?modules=cliente&acao=exibir&page=demonstrativo\"><i class=\"icon-align-justify\"></i> Demonstrativo Anual</a></li>"));
-	
+        //$divConteiner->addItem(new ARTextHml("<li><a href=\"index.php?modules=cliente&acao=exibir&page=extrato\"><i class=\"icon-th\"></i>Segunda Via</a></li>"));
+        $url = Config::SITE_ADDRESS."modules/cliente/exibir/0/extrato";
+        $divConteiner->addItem(new ARTextHml("<li><a href=\"{$url}\"><i class=\"icon-barcode\"></i> Segunda Via</a></li>"));
         
+        //$divConteiner->addItem(new ARTextHml("<li><a href=\"index.php?modules=cliente&acao=exibir&page=extrato\"><i class=\"icon-list-alt\"></i> Extrato Mensal</a></li>"));
+        
+        $url = Config::SITE_ADDRESS."modules/cliente/exibir/0/extrato";
+        $divConteiner->addItem(new ARTextHml("<li><a href=\"{$url}\"><i class=\"icon-barcode\"></i> Extrato Mensal</a></li>"));
+
+        //$divConteiner->addItem(new ARTextHml("<li><a href=\"index.php?modules=cliente&acao=exibir&page=demonstrativo\"><i class=\"icon-align-justify\"></i> Demonstrativo Anual</a></li>"));
+	
+        $url = Config::SITE_ADDRESS."modules/cliente/exibir/0/demonstrativo";
+        $divConteiner->addItem(new ARTextHml("<li><a href=\"{$url}\"><i class=\"icon-barcode\"></i> Demonstrativo Anual</a></li>"));
         
         
         $divConteiner->addItem(new ARTextHml("<li class=\"treeview\"><a class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\" href=\"index.php?modules=configuracoes\">

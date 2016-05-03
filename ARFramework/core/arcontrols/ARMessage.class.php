@@ -21,17 +21,17 @@ class ARMessage {
 			$class = "";
 			if($messageType == ARMessageType::AVISO){
 				$class = "btn-primary";
-                                $imagem = "ARFramework/lib/images/info.png";
+                                $imagem = Config::SITE_ADDRESS."ARFramework/lib/images/info.png";
                                 $texto = "Aviso";
 			}
 			if($messageType == ARMessageType::ERRO){
 				$class = "btn-danger";
-                                $imagem = "ARFramework/lib/images/error.png";
+                                $imagem = Config::SITE_ADDRESS."ARFramework/lib/images/error.png";
                                 $texto = "Erro";
 			}
 			if($messageType == ARMessageType::SUCESSO){
 				$class = "btn-success";
-                                $imagem = "ARFramework/lib/images/success.png";
+                                $imagem = Config::SITE_ADDRESS."ARFramework/lib/images/success.png";
                                 $texto = "Sucesso";
 			}
 			                                                

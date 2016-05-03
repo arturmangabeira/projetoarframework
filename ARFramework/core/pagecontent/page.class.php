@@ -187,7 +187,7 @@ class Page implements IPage{
     						if($scriptButton == 0){
     							$scriptButton++;
     							//nesse caso somente adiciona uma única vez para o button com a mesma acao
-    							$this->addScriptRel("ARFramework/lib/javascript/jquery/jquery.form.min.js");
+    							$this->addScriptRel(Config::SITE_ADDRESS."ARFramework/lib/javascript/jquery/jquery.form.min.js");
     							return;
     						}    						
     					}
@@ -198,15 +198,15 @@ class Page implements IPage{
     							//verifica se o tipo passado ActionButton está diferente de null
     							if($scriptMask == 0){
     								$scriptMask++;
-    								$this->addScriptRel("ARFramework/lib/javascript/jquery/jquery.maskedinput.min.js");
+    								$this->addScriptRel(Config::SITE_ADDRESS."ARFramework/lib/javascript/jquery/jquery.maskedinput.min.js");
     								if($propriedade->getValue($objCampo) == TipoARTextBoxMask::MONETARIO){
-    									$this->addScriptRel("arcontrols/javascript/jquery.maskmoney/jquery.maskMoney.js");
+    									$this->addScriptRel(Config::SITE_ADDRESS."arcontrols/javascript/jquery.maskmoney/jquery.maskMoney.js");
     								}
     							}else{
     								if($scriptMask == 1){
     									$scriptMask++;
 	    								if($propriedade->getValue($objCampo) == TipoARTextBoxMask::MONETARIO){
-	    									$this->addScriptRel("ARFramework/lib/javascript/jquery.maskmoney/jquery.maskMoney.js");
+	    									$this->addScriptRel(Config::SITE_ADDRESS."ARFramework/lib/javascript/jquery.maskmoney/jquery.maskMoney.js");
 	    								}
     								}
     							}
@@ -217,12 +217,12 @@ class Page implements IPage{
     							if($scriptDatePicker == 0){
     								$scriptDatePicker++;
     								if($propriedade->getValue($objCampo) == TipoARTextBox::DATETIME || $propriedade->getValue($objCampo) == TipoARTextBox::DATETIME_MONTH_YEAR || $propriedade->getValue($objCampo) == TipoARTextBox::DATETIME_YEAR){
-    									$this->addScriptRel("ARFramework/lib/javascript/jquery/jquery.ui.datepicker-pt-BR.js");
+    									$this->addScriptRel(Config::SITE_ADDRESS."ARFramework/lib/javascript/jquery/jquery.ui.datepicker-pt-BR.js");
     								}else{
     									if($propriedade->getValue($objCampo) == TipoARTextBox::NUMBER){
     										if($scriptMask == 0){
     											$scriptMask++;
-    											$this->addScriptRel("ARFramework/lib/javascript/jquery/jquery.maskedinput.min.js");
+    											$this->addScriptRel(Config::SITE_ADDRESS."ARFramework/lib/javascript/jquery/jquery.maskedinput.min.js");
     										}
     									}
     								}
@@ -235,8 +235,8 @@ class Page implements IPage{
     								//verifica se o tipo passado ActionButton está diferente de null
     								if($scriptTinyMCE == 0){
     									$scriptTinyMCE++;
-    									$this->addScriptRel("ARFramework/lib/javascript/tinymce_4.03/js/tinymce/tinymce.min.js");
-    									//$this->addScriptRel("arcontrols/javascript/ckeditor/ckeditor.js");
+    									$this->addScriptRel(Config::SITE_ADDRESS."ARFramework/lib/javascript/tinymce_4.03/js/tinymce/tinymce.min.js");
+    									//$this->addScriptRel(Config::SITE_ADDRESS."arcontrols/javascript/ckeditor/ckeditor.js");
     								}
     							}
     						}else{
@@ -248,16 +248,16 @@ class Page implements IPage{
     									if($propriedade->getValue($objCampo) == TipoARSelectBox::ASMSELECT){
     										if($asmSelect == 0){
     											$asmSelect++;
-    											$this->addScriptRel("ARFramework/lib/javascript/asmselect/jquery.asmselect.js");
+    											$this->addScriptRel(Config::SITE_ADDRESS."ARFramework/lib/javascript/asmselect/jquery.asmselect.js");
     											$this->addScriptCssRel("ARFramework/lib/javascript/asmselect/jquery.asmselect.css");
     										}
     									}else{
     										if($propriedade->getValue($objCampo) == TipoARSelectBox::MULTISELECT){
     											if($multiSelect == 0){
     												$multiSelect++;
-    												$this->addScriptRel("ARFramework/lib/javascript/jquery.multselect/jquery.multiselect.js");
-    												$this->addScriptRel("ARFramework/lib/javascript/jquery.multselect/jquery.multiselect.br.js");
-    												$this->addScriptCssRel("ARFramework/lib/javascript/jquery.multselect/jquery.multiselect.css");
+    												$this->addScriptRel(Config::SITE_ADDRESS."ARFramework/lib/javascript/jquery.multselect/jquery.multiselect.js");
+    												$this->addScriptRel(Config::SITE_ADDRESS."ARFramework/lib/javascript/jquery.multselect/jquery.multiselect.br.js");
+    												$this->addScriptCssRel(Config::SITE_ADDRESS."ARFramework/lib/javascript/jquery.multselect/jquery.multiselect.css");
     											}
     										}
     									}

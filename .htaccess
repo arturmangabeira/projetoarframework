@@ -1,0 +1,24 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+      
+  RewriteRule ^modules/([a-z]+)\/?$ index.php [NC]    
+
+  RewriteRule ^modules/([a-z]+)\/([a-z]+)\/?$ index.php?modules=$1&acao=$2 [NC] 
+
+  RewriteRule ^modules/([a-z]+)\/([a-z]+)\/([0-9]+)/?$ index.php?modules=$1&acao=$2&valueid=$3 [NC]
+
+  RewriteRule ^modules/([a-z]+)\/([a-z]+)\/([0-9]+)\/([a-z]+)/?$ index.php?modules=$1&acao=$2&valueid=$3&page=$4 [NC]
+
+  RewriteRule ^action/([a-z]+)\/?$ index.php [NC]
+
+  RewriteRule ^action/([a-z]+)\/([a-z]+)\/?$ index.php?modules=$1&metodo=$2&ajax=true [NC]
+    
+  RewriteRule ^action/([a-z]+)\/([a-z]+)\/([0-9]+)/?$ index.php?modules=$1&metodo=$2&valueid=$3&ajax=true [NC]
+
+  RewriteRule ^ajax/([a-z]+)\/?$ index.php [NC]
+
+  RewriteRule ^ajax/([a-z]+)\/([a-z]+)\/?$ index.php?modules=$1&modules=$2&ajax=true [NC]
+    
+  RewriteRule ^ajax/([a-z]+)\/([a-z]+)\/([0-9]+)/?$ index.php?modules=$1&modules=$2&valueid=$3&ajax=true [NC]
+
+</IfModule>

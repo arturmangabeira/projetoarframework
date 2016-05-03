@@ -95,11 +95,11 @@ class ARFrameWork{
 				
 				if($_REQUEST['ajax'] != "true"){
 					$script = "
-							<script src=\"ARFramework/lib/javascript/fancybox/source/jquery.fancybox.pack.js\" type=\"text/javascript\"></script>
-        						<script src=\"ARFramework/lib/javascript/jquery-ui-1.10.1.custom/js/jquery-ui-1.10.1.custom.js\" type=\"text/javascript\"></script> 
-                                                        <script src=\"ARFramework/lib/javascript/ARFramework.js\" type=\"text/javascript\"></script> 
-        						<link rel=\"stylesheet\" type=\"text/css\" href=\"ARFramework/lib/javascript/jquery-ui-1.10.1.custom/css/cupertino/jquery-ui-1.10.1.custom.css\">
-        						<link rel=\"stylesheet\" type=\"text/css\" href=\"ARFramework/lib/javascript/fancybox/source/jquery.fancybox.css\"> 
+							<script src=\"".Config::SITE_ADDRESS."ARFramework/lib/javascript/fancybox/source/jquery.fancybox.pack.js\" type=\"text/javascript\"></script>
+        						<script src=\"".Config::SITE_ADDRESS."ARFramework/lib/javascript/jquery-ui-1.10.1.custom/js/jquery-ui-1.10.1.custom.js\" type=\"text/javascript\"></script> 
+                                                        <script src=\"".Config::SITE_ADDRESS."ARFramework/lib/javascript/ARFramework.js\" type=\"text/javascript\"></script> 
+        						<link rel=\"stylesheet\" type=\"text/css\" href=\"".Config::SITE_ADDRESS."ARFramework/lib/javascript/jquery-ui-1.10.1.custom/css/cupertino/jquery-ui-1.10.1.custom.css\">
+        						<link rel=\"stylesheet\" type=\"text/css\" href=\"".Config::SITE_ADDRESS."ARFramework/lib/javascript/fancybox/source/jquery.fancybox.css\"> 
 								<script type=\"text/javascript\">
 									function exibirImagemAviso(mensagem){
 						
@@ -152,7 +152,7 @@ class ARFrameWork{
 							
 							<div style=\"display: none;\">
 								<div id=\"div_aviso\">				
-									<i class=\"icon-info-sign\"></i><p class=\"text-center\"> <img src=\"ARFramework/lib/images/loading.gif\" width=\"100px\" height=\"100px\" /> Aguarde Requisição...</p>
+									<i class=\"icon-info-sign\"></i><p class=\"text-center\"> <img src=\"".Config::SITE_ADDRESS."ARFramework/lib/images/loading.gif\" width=\"100px\" height=\"100px\" /> Aguarde Requisição...</p>
 								</div>
 							</div>
 							<!-- Cabeçalho -->
@@ -236,7 +236,7 @@ class ARFrameWork{
 	}
 	
 	static function obterTemaAtual(){
-		return "app/themes/".Config::TEMA."/";
+		return Config::SITE_ADDRESS."app/themes/".Config::TEMA."/";
 	}
 	
 }

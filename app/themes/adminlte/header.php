@@ -8,38 +8,38 @@
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.5 -->
-    <link rel="stylesheet" href="app/themes/adminlte/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo Config::SITE_ADDRESS?>app/themes/adminlte/bootstrap/css/bootstrap.min.css">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="app/themes/adminlte/bootstrap/fonts/font-awesome_4.4.0_css_font-awesome.min.css">
+    <link rel="stylesheet" href="<?php echo Config::SITE_ADDRESS?>app/themes/adminlte/bootstrap/fonts/font-awesome_4.4.0_css_font-awesome.min.css">
     <!-- Ionicons -->
-    <link rel="stylesheet" href="app/themes/adminlte/bootstrap/fonts/ionicframework.com_ionicons_2.0.1_css_ionicons.min">
+    <link rel="stylesheet" href="<?php echo Config::SITE_ADDRESS?>app/themes/adminlte/bootstrap/fonts/ionicframework.com_ionicons_2.0.1_css_ionicons.min">
     <!-- jvectormap -->
-    <link rel="stylesheet" href="app/themes/adminlte/plugins/jvectormap/jquery-jvectormap-1.2.2.css">
+    <link rel="stylesheet" href="<?php echo Config::SITE_ADDRESS?>app/themes/adminlte/plugins/jvectormap/jquery-jvectormap-1.2.2.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="app/themes/adminlte/dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="<?php echo Config::SITE_ADDRESS?>app/themes/adminlte/dist/css/AdminLTE.min.css">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
-    <link rel="stylesheet" href="app/themes/adminlte/dist/css/skins/_all-skins.min.css">
+    <link rel="stylesheet" href="<?php echo Config::SITE_ADDRESS?>app/themes/adminlte/dist/css/skins/_all-skins.min.css">
     
       <!-- jQuery 2.1.4 -->
-    <script src="app/themes/adminlte/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+    <script src="<?php echo Config::SITE_ADDRESS?>app/themes/adminlte/plugins/jQuery/jQuery-2.1.4.min.js"></script>
     <!-- Bootstrap 3.3.5 -->
-    <script src="app/themes/adminlte/bootstrap/js/bootstrap.min.js"></script>
+    <script src="<?php echo Config::SITE_ADDRESS?>app/themes/adminlte/bootstrap/js/bootstrap.min.js"></script>
     <!-- Bootbox 3.0 -->
-    <script src="app/themes/adminlte/bootstrap/js/bootbox.min.js" type="text/javascript"></script>
+    <script src="<?php echo Config::SITE_ADDRESS?>app/themes/adminlte/bootstrap/js/bootbox.min.js" type="text/javascript"></script>
     <!-- FastClick -->
-    <script src="app/themes/adminlte/plugins/fastclick/fastclick.min.js"></script>
+    <script src="<?php echo Config::SITE_ADDRESS?>app/themes/adminlte/plugins/fastclick/fastclick.min.js"></script>
     <!-- AdminLTE App -->
-    <script src="app/themes/adminlte/dist/js/app.min.js"></script>
+    <script src="<?php echo Config::SITE_ADDRESS?>app/themes/adminlte/dist/js/app.min.js"></script>
     <!-- Sparkline -->
-    <script src="app/themes/adminlte/plugins/sparkline/jquery.sparkline.min.js"></script>
+    <script src="<?php echo Config::SITE_ADDRESS?>app/themes/adminlte/plugins/sparkline/jquery.sparkline.min.js"></script>
     <!-- jvectormap -->
-    <script src="app/themes/adminlte/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
-    <script src="app/themes/adminlte/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="<?php echo Config::SITE_ADDRESS?>app/themes/adminlte/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+    <script src="<?php echo Config::SITE_ADDRESS?>app/themes/adminlte/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
     <!-- SlimScroll 1.3.0 -->
-    <script src="app/themes/adminlte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+    <script src="<?php echo Config::SITE_ADDRESS?>app/themes/adminlte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
     <!-- ChartJS 1.0.1 -->
-    <script src="app/themes/adminlte/plugins/chartjs/Chart.min.js"></script>   
+    <script src="<?php echo Config::SITE_ADDRESS?>app/themes/adminlte/plugins/chartjs/Chart.min.js"></script>   
     
     
 
@@ -88,7 +88,7 @@
                       <li><!-- start message -->
                         <a href="#">
                           <div class="pull-left">
-                            <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                            <img src="<?php echo Config::SITE_ADDRESS?>dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                           </div>
                           <h4>
                             Support Team
@@ -100,7 +100,7 @@
                       <li>
                         <a href="#">
                           <div class="pull-left">
-                            <img src="dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
+                            <img src="<?php echo Config::SITE_ADDRESS?>dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
                           </div>
                           <h4>
                             AdminLTE Design Team
@@ -112,7 +112,7 @@
                       <li>
                         <a href="#">
                           <div class="pull-left">
-                            <img src="dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
+                            <img src="<?php echo Config::SITE_ADDRESS?>dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
                           </div>
                           <h4>
                             Developers
@@ -124,7 +124,7 @@
                       <li>
                         <a href="#">
                           <div class="pull-left">
-                            <img src="dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
+                            <img src="<?php echo Config::SITE_ADDRESS?>dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
                           </div>
                           <h4>
                             Sales Department
@@ -136,7 +136,7 @@
                       <li>
                         <a href="#">
                           <div class="pull-left">
-                            <img src="dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
+                            <img src="<?php echo Config::SITE_ADDRESS?>dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
                           </div>
                           <h4>
                             Reviewers
@@ -264,13 +264,13 @@
               <!-- User Account: style can be found in dropdown.less -->
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <img src="app/themes/adminlte/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+                  <img src="<?php echo Config::SITE_ADDRESS?>app/themes/adminlte/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
                   <span class="hidden-xs"><?php echo $_SESSION["nomeAdmin"];?></span>
                 </a>
                 <ul class="dropdown-menu">
                   <!-- User image -->
                   <li class="user-header">
-                    <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                    <img src="<?php echo Config::SITE_ADDRESS?>dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                     <p>
                       Alexander Pierce - Web Developer
                       <small>Member since Nov. 2012</small>
@@ -294,7 +294,7 @@
                       <a href="#" class="btn btn-default btn-flat">Profile</a>
                     </div>
                     <div class="pull-right">
-                      <a href="index.php?modules=admin&acao=logout" class="btn btn-default btn-flat">Sair</a>
+                      <a href="/modules/admin/logout" class="btn btn-default btn-flat">Sair</a>
                     </div>
                   </li>
                 </ul>
@@ -315,7 +315,7 @@
           <!-- Sidebar user panel -->
           <div class="user-panel">
             <div class="pull-left image">
-              <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+              <img src="<?php echo Config::SITE_ADDRESS?>dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
               <p>Artur Mangabeira</p>

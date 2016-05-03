@@ -18,11 +18,11 @@ class Admin extends Page {
         $this->admUi = new AdminUI();
     }
     
-    public function generatePage($args) {       
+    public function generatePage($args) {          
     	if($args->acao == "logout"){
             $this->logOut();
-        }else{
-            $this->addItemPage($this->admUi->gerarLoginAdmin());    	
+        }else{            
+            $this->addItemPage($this->admUi->gerarLoginAdmin());    	            
         }
     }      
 
@@ -45,7 +45,8 @@ class Admin extends Page {
 	        $_SESSION["acessoLogin"] = "true";
 	        if($retornoDto->getAdmin_Usuario() == 1){
 		        $_SESSION["acessoAdmin"] = "true";
-		        funcoes::redirecionar("index.php?modules=cliente&acao=exibir&page=bvd");
+		        //funcoes::redirecionar("index.php?modules=cliente&acao=exibir&page=bvd");
+                        funcoes::redirecionar("/modules/cliente/exibir/1/");
 	        }	        
         }else{
         	ARMessage::showMessage("Login e Senha Inválidas para acesso ao modo administrador", ARMessageType::ERRO);

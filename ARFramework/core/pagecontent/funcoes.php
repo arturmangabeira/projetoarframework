@@ -48,6 +48,8 @@ class funcoes {
            $url = $url."&classe=".$classe;  
         }
         
+        $url = Config::SITE_ADDRESS.$url;
+        
         //header("Location:".$url);
         $script  = "<script type=\"text/javascript\">";
         if($timeout){
